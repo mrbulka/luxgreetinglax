@@ -1,30 +1,49 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import NavBar from './components/NavBar.vue'
+import Hero from './components/Hero.vue'
+import ServicesSection from './sections/ServicesSection.vue'
+import WhyUsSection from './sections/WhyUsSection.vue'
+import ProcessSection from './sections/ProcessSection.vue'
+import FooterBar from './components/FooterBar.vue'
 </script>
 
 <template>
   <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+    <header class="is-sticky">
+      <NavBar />
+    </header>
+
+    <main>
+      <Hero />
+
+      <section id="services" class="section">
+        <ServicesSection />
+      </section>
+
+      <section id="why-us" class="section section--tight">
+        <WhyUsSection />
+      </section>
+
+      <section id="process" class="section section--tight">
+        <ProcessSection />
+      </section>
+
+      <!-- Anchor target for unified "Book Now" CTA skeleton -->
+      <section id="book" class="section section--tight">
+        <div class="container">
+          <h2 class="visually-hidden">Book Now</h2>
+          <p class="muted">Booking is coming soon. All “Book Now” buttons are visual placeholders.</p>
+          <hr class="rule" />
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <FooterBar />
+    </footer>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+/* Page-specific spacing polish may be added later during Visual QA */
 </style>
